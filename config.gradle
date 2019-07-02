@@ -1,0 +1,45 @@
+/**
+ * config.gradle用于配置项目中各种lib引用和版本号控制
+ * 需要添加新的类库时，先查询本列表和项目中是否已引用类似功能的类库，尽量不要添加重复功能的类库
+ */
+
+projects.ext {
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
+    minSdkVersion = 15
+    targetSdkVersion = 28
+    appApplicationId = 'com.zhang.net_work'
+    appVersionCode = 1              //正式版本号
+    appVersionName = '1.0.0'        //正式版本名
+    appVersionCodeDebug = 1         //测试版本号
+    appVersionNameDebug = '1.0.0.1' //测试版本号
+
+    //测试包<true>===发布包<false>
+    is_debug = true
+
+    //引用类库的版本号
+    dependVersion = [
+            support_version: '28.0.0'
+    ]
+
+    //类库maven地址
+    supportLibs = [
+            appcompat_v7   : "com.android.support:appcompat-v7:$dependVersion.support_version",
+            constraint     : 'com.android.support.constraint:constraint-layout:1.1.3',
+            support_v4     : "com.android.support:support-v4:$dependVersion.support_version",
+            junit          : 'junit:junit:4.12',
+            runner         : 'com.android.support.test:runner:1.0.2',
+            espresso       : 'com.android.support.test.espresso:espresso-core:3.0.2',
+            design         : "com.android.support:design:$dependVersion.support_version",
+            retrofit       : 'com.squareup.retrofit2:retrofit:2.5.0',
+            adapter_rxjava2: 'com.squareup.retrofit2:adapter-rxjava2:2.4.0',
+            rxandroid      : 'io.reactivex.rxjava2:rxandroid:2.0.1',
+            fastjson       : 'com.alibaba:fastjson:1.2.22',
+            logger         : 'com.orhanobut:logger:2.2.0',
+            annotations    : 'org.jetbrains:annotations-java5:15.0',
+    ]
+
+    //项目依赖列表
+    supportDeps = [supportLibs.values()]
+
+}
