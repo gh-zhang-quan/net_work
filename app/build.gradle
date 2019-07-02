@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply from: "${rootProject.rootDir}/config.gradle"
-
+apply plugin: 'com.github.dcendents.android-maven'
+group='https://github.com/gh-zhang-quan/net_work'
 android {
     compileSdkVersion projects.ext.compileSdkVersion
     buildToolsVersion projects.ext.buildToolsVersion
